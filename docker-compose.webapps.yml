@@ -6,7 +6,7 @@ networks:
 
 services:
   nginx:
-    image: nginx:1.13
+    image: tbartifactory-artifactory01.prod.247media.com:5003/nginx:1.13
     networks:
     - proxy
     deploy:
@@ -17,7 +17,7 @@ services:
       - traefik.port=80
       - traefik.enable=true
   apache:
-    image: httpd:2.4
+    image: tbartifactory-artifactory01.prod.247media.com:5003/httpd:2.4
     networks:
     - proxy
     deploy:
@@ -28,7 +28,7 @@ services:
       - traefik.port=80
       - traefik.enable=true
   caddy:
-    image: abiosoft/caddy:0.10.7
+    image: tbartifactory-artifactory01.prod.247media.com:5003/abiosoft/caddy:0.10.7
     networks:
     - proxy
     deploy:
@@ -39,7 +39,7 @@ services:
       - traefik.port=2015
       - traefik.enable=true
   apiv1:
-    image: z0r1k/whoami
+    image: tbartifactory-artifactory01.prod.247media.com:5003/z0r1k/whoami
     networks:
     - proxy
     environment:
@@ -53,7 +53,7 @@ services:
       - traefik.port=80
       - traefik.enable=true
   apiv2:
-    image: z0r1k/whoami
+    image: tbartifactory-artifactory01.prod.247media.com:5003/z0r1k/whoami
     networks:
     - proxy
     environment:
